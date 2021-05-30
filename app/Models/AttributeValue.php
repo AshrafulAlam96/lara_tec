@@ -26,11 +26,19 @@ class AttributeValue extends Model
   ];
 
   /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+   */
     public function attribute()
     {
         return $this->belongsTo(Attribute::class);
-      }
-      
+    }
+
+    /**
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    */
+    public function productAttributes()
+    {
+      return $this->belongsToMany(ProductAttribute::class);
+    }
+
 }
